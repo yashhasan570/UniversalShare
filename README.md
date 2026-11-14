@@ -20,4 +20,4 @@ flutter run
 
 ## Sync
 
-`.github/workflows/sync.yml` pulls upstream changes from the LocalSend project daily, re-applies the Universal Share branding via `scripts/migrate.py`, and refreshes the icon set via `scripts/icons/install_icons.py`.
+`.github/workflows/sync.yml` pulls upstream changes daily, re-applies the Universal Share branding via `scripts/migrate.py`, and refreshes the icon set via `scripts/icons/install_icons.py`.
