@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:localsend_app/util/ui/nav_bar_padding.dart';
-import 'package:localsend_app/widget/responsive_builder.dart';
+import 'package:universal_share/util/ui/nav_bar_padding.dart';
+import 'package:universal_share/widget/responsive_builder.dart';
 
 class ResponsiveListView extends StatelessWidget {
   static const defaultMaxWidth = 600.0;

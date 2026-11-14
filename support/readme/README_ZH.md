@@ -1,11 +1,11 @@
-# LocalSend
+# Universal Share
 
 [![CI 状态][ci-badge]][ci-workflow]
 [![Translations][translate-badge]][translate-link]
 [![Packaging status][packaging-badge]][packaging-link]
 
-[ci-badge]: https://github.com/localsend/localsend/actions/workflows/ci.yml/badge.svg
-[ci-workflow]: https://github.com/localsend/localsend/actions/workflows/ci.yml
+[ci-badge]: https://github.com/yashhasan570/UniversalShare/actions/workflows/ci.yml/badge.svg
+[ci-workflow]: https://github.com/yashhasan570/UniversalShare/actions/workflows/ci.yml
 [translate-badge]: https://hosted.weblate.org/widget/localsend/app/svg-badge.svg
 [translate-link]: https://hosted.weblate.org/engage/localsend/
 [packaging-badge]: https://repology.org/badge/tiny-repos/localsend.svg
@@ -17,12 +17,12 @@
 
 > 注意：中文文档更新可能不够及时，请以英文文档为准。
 
-[homepage]: https://localsend.org
+[homepage]: https://github.com/yashhasan570/UniversalShare
 [discord]: https://discord.gg/GSRWmQNP87
-[github]: https://github.com/localsend/localsend
-[codeberg]: https://codeberg.org/localsend/localsend
+[github]: https://github.com/yashhasan570/UniversalShare
+[codeberg]: https://github.com/yashhasan570/UniversalShare
 
-LocalSend 是一个自由、开源的应用程序，允许你在本地网络上安全地与附近设备分享文件和消息，无需互联网连接。
+Universal Share 是一个自由、开源的应用程序，允许你在本地网络上安全地与附近设备分享文件和消息，无需互联网连接。
 
 - [关于](#关于)
 - [截图](#截图)
@@ -44,11 +44,11 @@ LocalSend 是一个自由、开源的应用程序，允许你在本地网络上�
 
 ## 关于
 
-LocalSend 是一个跨平台应用程序，使用 REST API 和 HTTPS 加密实现设备之间的安全通信。与依赖外部服务器的其他消息应用程序不同，LocalSend 不需要互联网连接或第三方服务器，因此成为本地通信的快速可靠解决方案。
+Universal Share 是一个跨平台应用程序，使用 REST API 和 HTTPS 加密实现设备之间的安全通信。与依赖外部服务器的其他消息应用程序不同，Universal Share 不需要互联网连接或第三方服务器，因此成为本地通信的快速可靠解决方案。
 
 ## 截图
 
-<img src="https://localsend.org/img/screenshot-iphone.webp" alt="iPhone截图" height="300"/> <img src="https://localsend.org/img/screenshot-pc.webp" alt="PC截图" height="300"/>
+<img src="https://github.com/yashhasan570/UniversalShare/img/screenshot-iphone.webp" alt="iPhone截图" height="300"/> <img src="https://github.com/yashhasan570/UniversalShare/img/screenshot-pc.webp" alt="PC截图" height="300"/>
 
 ## 下载
 
@@ -72,20 +72,20 @@ Windows 二进制文件已签名。了解更多关于[代码签名政策][]的�
 
 [windows store]: https://www.microsoft.com/store/apps/9NCB4Z0TZ6RR
 [app store]: https://apps.apple.com/us/app/localsend/id1661733229
-[play store]: https://play.google.com/store/apps/details?id=org.localsend.localsend_app
-[f-droid]: https://f-droid.org/packages/org.localsend.localsend_app
+[play store]: https://play.google.com/store/apps/details?id=com.universalshare.app
+[f-droid]: https://f-droid.org/packages/com.universalshare.app
 [amazon]: https://www.amazon.com/dp/B0BW6MP732
-[winget]: https://github.com/microsoft/winget-pkgs/tree/master/manifests/l/LocalSend/LocalSend
+[winget]: https://github.com/microsoft/winget-pkgs/tree/master/manifests/l/Universal Share/Universal Share
 [scoop]: https://scoop.sh/#/apps?s=0&d=1&o=true&q=localsend&id=fb88113be361ca32c0dcac423cb4afdeda0b0c66
 [chocolatey]: https://community.chocolatey.org/packages/localsend
 [homebrew]: https://formulae.brew.sh/cask/localsend
-[flathub]: https://flathub.org/apps/details/org.localsend.localsend_app
+[flathub]: https://flathub.org/apps/details/com.universalshare.app
 [nixpkgs]: https://search.nixos.org/packages?show=localsend
 [snap]: https://snapcraft.io/localsend
 [aur]: https://aur.archlinux.org/packages/localsend-bin
-[latest]: https://github.com/localsend/localsend/releases/latest
-[发行渠道]: https://github.com/localsend/localsend/blob/main/CONTRIBUTING.md#distribution
-[代码签名政策]: https://github.com/localsend/localsend/blob/main/CODE_SIGNING.md
+[latest]: https://github.com/yashhasan570/UniversalShare/releases/latest
+[发行渠道]: https://github.com/yashhasan570/UniversalShare/blob/main/CONTRIBUTING.md#distribution
+[代码签名政策]: https://github.com/yashhasan570/UniversalShare/blob/main/CODE_SIGNING.md
 
 **兼容性**
 
@@ -93,13 +93,13 @@ Windows 二进制文件已签名。了解更多关于[代码签名政策][]的�
 |---------|------------|--------------------------------------------------------------------------------------------------------------------------------|
 | Android | 7.0        | 最后一个支持 Android 5 和 6 的版本是 v1.17.0。                                                                                   |
 | iOS     | 13.0       | 最后一个支持 iOS 12 的版本是 v1.17.0。                                                                                          |
-| macOS   | 11 Big Sur | 请使用 OpenCore Legacy Patcher 2.0.2 （见 [#1005](https://github.com/localsend/localsend/issues/1005#issuecomment-2449899384)） |
+| macOS   | 11 Big Sur | 请使用 OpenCore Legacy Patcher 2.0.2 （见 [#1005](https://github.com/yashhasan570/UniversalShare/issues/1005#issuecomment-2449899384)） |
 | Windows | 10         | 最后一个支持 Windows 7 的版本是 v1.15.4 。未来也许会将更新的版本向后移植至兼容 Windows 7 。                                    |
 | Linux   | 不适用     | 依赖：Gnome：`xdg-desktop-portal` 和 `xdg-desktop-portal-gtk`；KDE：`xdg-desktop-portal` 和 `xdg-desktop-portal-kde`           |
 
 ## 设置
 
-在大多数情况下，LocalSend 应该可以直接使用。但是，如果你在发送或接收文件时遇到问题，可能需要配置防火墙以允许 LocalSend 在你的本地网络上通信。
+在大多数情况下，Universal Share 应该可以直接使用。但是，如果你在发送或接收文件时遇到问题，可能需要配置防火墙以允许 Universal Share 在你的本地网络上通信。
 
 | 流量类型 | 协议     | 端口  | 操作 |
 |----------|----------|-------|------|
@@ -123,15 +123,15 @@ Windows 二进制文件已签名。了解更多关于[代码签名政策][]的�
 
 （更新于 v1.15.0）
 
-使用 `--hidden` 命令行参数隐藏式启动（只在系统托盘里显示）此应用（例如： `localsend_app.exe --hidden`）。
+使用 `--hidden` 命令行参数隐藏式启动（只在系统托盘里显示）此应用（例如： `universal_share.exe --hidden`）。
 
 在 v1.14.0 或更早的版本中，如果设置了 `autostart` 标志，并且启用了隐藏设置，则应用程序将会隐藏式启动。
 
 ## 工作原理
 
-LocalSend 使用安全通信协议，允许设备通过 REST API 进行通信。所有数据都通过 HTTPS 安全地发送，并且 TLS/SSL 证书会在每台设备上动态生成，确保最大的安全性。
+Universal Share 使用安全通信协议，允许设备通过 REST API 进行通信。所有数据都通过 HTTPS 安全地发送，并且 TLS/SSL 证书会在每台设备上动态生成，确保最大的安全性。
 
-欲了解更多关于 LocalSend 协议的信息，请参阅[文档](https://github.com/localsend/protocol)。
+欲了解更多关于 Universal Share 协议的信息，请参阅[文档](https://github.com/localsend/protocol)。
 
 ## 依赖层级
 
@@ -139,24 +139,24 @@ LocalSend 使用安全通信协议，允许设备通过 REST API 进行通信。
 
 ## 开始使用
 
-要从源代码编译 LocalSend，请按照以下步骤进行操作：
+要从源代码编译 Universal Share，请按照以下步骤进行操作：
 
 1. [直接](https://flutter.dev)安装 Flutter 或使用 [fvm](https://fvm.app) 安装（所需版本见 [.fvmrc](/.fvmrc)）。
 2. 安装 [Rust](https://www.rust-lang.org/tools/install)。
-3. 克隆 `LocalSend` 代码库。
+3. 克隆 `Universal Share` 代码库。
 4. 执行 `cd app` 进入 app 目录。
 5. 运行 `flutter pub get` 下载依赖项。
 6. 运行 `flutter run` 启动应用程序。
 
 > [!NOTE]
-> LocalSend 目前需要老版本的 Flutter （具体见 [.fvmrc](/.fvmrc)）
-> 因而一些构建问题也许是系统安装的 Flutter 版本和 LocalSend 所需的 Flutter 版本不一致导致的。
-> 为了在开发过程中保持一致性，LocalSend 使用 [fvm](https://fvm.app) 来管理此项目的 Flutter 版本。
+> Universal Share 目前需要老版本的 Flutter （具体见 [.fvmrc](/.fvmrc)）
+> 因而一些构建问题也许是系统安装的 Flutter 版本和 Universal Share 所需的 Flutter 版本不一致导致的。
+> 为了在开发过程中保持一致性，Universal Share 使用 [fvm](https://fvm.app) 来管理此项目的 Flutter 版本。
 > 安装 `fvm` 后，请运行 `fvm flutter` 而非 `flutter` 。
 
 ## 命令行界面
 
-LocalSend CLI 是一个基于 LocalSend 协议 v2 的终端客户端。
+Universal Share CLI 是一个基于 Universal Share 协议 v2 的终端客户端。
 
 在 macOS 和 Linux 上，使用 [Homebrew](https://brew.sh) 安装 CLI：
 
@@ -189,13 +189,13 @@ localsend-cli send --to "Cute Tomato" report.pdf
 localsend-cli send --to 192.168.27.26 report.pdf
 ```
 
-别名必须能唯一确定一台已发现的设备。IP 地址会通过 HTTPS 在 LocalSend 的默认端口（`53317`）上直接探测。
+别名必须能唯一确定一台已发现的设备。IP 地址会通过 HTTPS 在 Universal Share 的默认端口（`53317`）上直接探测。
 
-目录会被递归收集。所选根目录的名称及其嵌套路径会在接收端保留。空目录不会被发送，因为 LocalSend 传输的是文件条目而非目录条目。
+目录会被递归收集。所选根目录的名称及其嵌套路径会在接收端保留。空目录不会被发送，因为 Universal Share 传输的是文件条目而非目录条目。
 
 ## 贡献
 
-我们欢迎任何有兴趣帮助改进 LocalSend 的人士贡献。如果你想贡献，有几种方式可以参与：
+我们欢迎任何有兴趣帮助改进 Universal Share 的人士贡献。如果你想贡献，有几种方式可以参与：
 
 ### 翻译
 
@@ -203,7 +203,7 @@ localsend-cli send --to 192.168.27.26 report.pdf
 
 另外，你也可以 fork 这个仓库并手动添加翻译。
 
-翻译在 [app/assets/i18n](https://github.com/localsend/localsend/tree/main/app/assets/i18n) 目录。编辑 `_missing_translations_<locale>.json` 或 `strings_<locale>.i18n.json` 文件来添加或更新翻译。
+翻译在 [app/assets/i18n](https://github.com/yashhasan570/UniversalShare/tree/main/app/assets/i18n) 目录。编辑 `_missing_translations_<locale>.json` 或 `strings_<locale>.i18n.json` 文件来添加或更新翻译。
 
 <a href="https://hosted.weblate.org/engage/localsend/">
 <img src="https://hosted.weblate.org/widget/localsend/app/multi-auto.svg" alt="Translation status" />
@@ -214,9 +214,9 @@ localsend-cli send --to 192.168.27.26 report.pdf
 ### Bug 修复和改进
 
 - **Bug 修复：** 如果发现 bug，请创建一个带有清晰描述问题及解决方法的拉取请求。
-- **改进：** 有改进 LocalSend 的想法吗？请先创建一个问题来讨论为什么需要这个改进。
+- **改进：** 有改进 Universal Share 的想法吗？请先创建一个问题来讨论为什么需要这个改进。
 
-欲了解更多信息，请参阅[贡献指南](https://github.com/localsend/localsend/blob/main/CONTRIBUTING.md)。
+欲了解更多信息，请参阅[贡献指南](https://github.com/yashhasan570/UniversalShare/blob/main/CONTRIBUTING.md)。
 
 ## 故障排查
 
@@ -300,6 +300,6 @@ appimage-builder --recipe AppImageBuilder.yml
 
 ## 贡献者
 
-<a href="https://github.com/localsend/localsend/graphs/contributors">
+<a href="https://github.com/yashhasan570/UniversalShare/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=localsend/localsend"  alt="Localsend 贡献者"/>
 </a>

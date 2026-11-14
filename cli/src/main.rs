@@ -30,7 +30,7 @@ pub enum Command {
     },
 }
 
-/// LocalSend CLI
+/// Universal Share CLI
 #[derive(Parser)]
 #[command(name = "localsend-cli", version, about, after_help = HELP_SECTIONS)]
 pub struct Args {

@@ -1,6 +1,6 @@
 VERSION=$(sed -n 's/^version: \([0-9]*\.[0-9]*\.[0-9]*\).*/\1/p' app/pubspec.yaml)
-ARM_NAME="LocalSend-CLI-$VERSION-macos-arm-64"
-X64_NAME="LocalSend-CLI-$VERSION-macos-x86-64"
+ARM_NAME="Universal Share-CLI-$VERSION-macos-arm-64"
+X64_NAME="Universal Share-CLI-$VERSION-macos-x86-64"
 
 rustup target add aarch64-apple-darwin x86_64-apple-darwin
 
@@ -20,7 +20,7 @@ cp target/x86_64-apple-darwin/release/localsend-cli "$X64_NAME/localsend-cli"
 echo
 echo "Signing the CLI..."
 echo
-SIGN_ID="Developer ID Application: Tien Do Nam (3W7H4PYMCV)"
+SIGN_ID="Developer ID Application: yashhasan570 (3W7H4PYMCV)"
 codesign --force --verbose --options runtime --sign "$SIGN_ID" "$ARM_NAME/localsend-cli"
 codesign --force --verbose --options runtime --sign "$SIGN_ID" "$X64_NAME/localsend-cli"
 

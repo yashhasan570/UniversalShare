@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'package:localsend_app/gen/strings.g.dart';
+import 'package:universal_share/gen/strings.g.dart';
 
 String generateRandomAlias() {
   final random = Random();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:localsend_app/config/theme.dart';
-import 'package:localsend_app/gen/strings.g.dart';
+import 'package:universal_share/config/theme.dart';
+import 'package:universal_share/gen/strings.g.dart';
 import 'package:nanoid2/nanoid2.dart';
 import 'package:routerino/routerino.dart';
 

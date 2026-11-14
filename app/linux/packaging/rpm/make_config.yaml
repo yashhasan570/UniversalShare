@@ -1,7 +1,7 @@
-display_name: LocalSend
-packager: Tienisto
+display_name: Universal Share
+packager: johnconstantine570
 packagerEmail: dev.tien.donam@gmail.com
-url: https://localsend.org
+url: https://github.com/yashhasan570/UniversalShare
 buildArch: x86_64
 license: MIT
 
@@ -17,7 +17,7 @@ keywords:
   - Files
 
 generic_name: An open source cross-platform alternative to AirDrop
-summary: Share files easily with LocalSend
+summary: Share files easily with Universal Share
 group: Applications/Utilities
 
 categories:

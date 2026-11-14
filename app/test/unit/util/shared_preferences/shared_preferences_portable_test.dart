@@ -1,4 +1,4 @@
-import 'package:localsend_app/util/shared_preferences/shared_preferences_portable.dart';
+import 'package:universal_share/util/shared_preferences/shared_preferences_portable.dart';
 import 'package:path/path.dart' as path;
 import 'package:test/test.dart';
 
@@ -6,7 +6,7 @@ void main() {
   test('should put settings.json next to the executable', () {
     expect(
       buildSettingsPath(
-        executablePath: path.join('opt', 'localsend', 'localsend_app'),
+        executablePath: path.join('opt', 'localsend', 'universal_share'),
         fallbackDirectory: () => fail('The fallback should not be used when the executable is known'),
       ),
       path.join('opt', 'localsend', 'settings.json'),
@@ -14,7 +14,7 @@ void main() {
   });
 
   test('should fall back to the working directory when the executable is unknown', () {
-    // https://github.com/localsend/localsend/issues/3021
+    // https://github.com/yashhasan570/UniversalShare/issues/3021
     expect(
       buildSettingsPath(
         executablePath: null,

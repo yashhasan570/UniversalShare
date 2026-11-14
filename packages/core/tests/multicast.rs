@@ -20,7 +20,7 @@ use tokio::sync::{mpsc, oneshot};
 static NEXT_PORT: AtomicU16 = AtomicU16::new(54317);
 
 /// Like the group the protocol uses, but distinct from it so that real
-/// LocalSend instances on the machine stay out.
+/// Universal Share instances on the machine stay out.
 const TEST_GROUP: Ipv4Addr = Ipv4Addr::new(224, 0, 0, 168);
 
 /// See [TEST_GROUP].

@@ -143,7 +143,7 @@ class IsolateDiscoveryDeviceLogsAction extends AsyncReduxActionWithResult<Isolat
   }
 }
 
-/// Sends an announcement which makes every other LocalSend device on the
+/// Sends an announcement which makes every other Universal Share device on the
 /// network register with this device's HTTP server.
 class IsolateDiscoveryAnnouncementAction extends ReduxAction<IsolateController, ParentIsolateState> {
   @override

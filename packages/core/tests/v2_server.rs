@@ -1217,7 +1217,7 @@ async fn test_prepare_upload_cancelled_by_session_less_cancel() {
 }
 
 /// Same as [test_prepare_upload_aborted_by_sender_disconnect], but over TLS
-/// with mutual certificates - the transport every real LocalSend transfer
+/// with mutual certificates - the transport every real Universal Share transfer
 /// uses - and cancelled through the client's cancellation token, the way a
 /// sender cancels while waiting for the receiver's decision.
 #[tokio::test]
@@ -1225,12 +1225,12 @@ async fn test_prepare_upload_aborted_by_sender_disconnect_tls() {
     let _ = tracing_subscriber::fmt().with_test_writer().try_init();
 
     let server_key = rcgen::KeyPair::generate().unwrap();
-    let server_cert = rcgen::CertificateParams::new(vec!["LocalSend User".to_string()])
+    let server_cert = rcgen::CertificateParams::new(vec!["Universal Share User".to_string()])
         .unwrap()
         .self_signed(&server_key)
         .unwrap();
     let sender_key = rcgen::KeyPair::generate().unwrap();
-    let sender_cert = rcgen::CertificateParams::new(vec!["LocalSend User".to_string()])
+    let sender_cert = rcgen::CertificateParams::new(vec!["Universal Share User".to_string()])
         .unwrap()
         .self_signed(&sender_key)
         .unwrap();

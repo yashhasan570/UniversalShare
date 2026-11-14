@@ -1,4 +1,4 @@
-import 'package:localsend_app/provider/local_ip_provider.dart';
+import 'package:universal_share/provider/local_ip_provider.dart';
 import 'package:test/test.dart';
 
 void main() {

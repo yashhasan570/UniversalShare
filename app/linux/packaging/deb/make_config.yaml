@@ -1,7 +1,7 @@
-display_name: LocalSend
+display_name: Universal Share
 package_name: localsend
 maintainer:
-  name: Tienisto
+  name: johnconstantine570
   email: dev.tien.donam@gmail.com
 co_authors:
   - name: TheGB0077
@@ -44,5 +44,5 @@ startup_notify: true
 
 # Must match the GTK application id set in linux/CMakeLists.txt, otherwise the
 # desktop environment cannot map the running window back to this desktop entry.
-# https://github.com/localsend/localsend/pull/3355
-startup_wm_class: org.localsend.localsend_app
+# https://github.com/yashhasan570/UniversalShare/pull/3355
+startup_wm_class: com.universalshare.app

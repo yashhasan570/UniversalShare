@@ -5,10 +5,10 @@ project(runner LANGUAGES CXX)
 
 # The name of the executable created for the application. Change this to change
 # the on-disk name of your application.
-set(BINARY_NAME "localsend_app")
+set(BINARY_NAME "universal_share")
 # The unique GTK application identifier for this application. See:
 # https://wiki.gnome.org/HowDoI/ChooseApplicationID
-set(APPLICATION_ID "org.localsend.localsend_app")
+set(APPLICATION_ID "com.universalshare.app")
 
 # Explicitly opt in to modern CMake behaviors to avoid warnings with recent
 # versions of CMake.
@@ -95,7 +95,7 @@ include(flutter/generated_plugins.cmake)
 # to fail because deprecation warnings are treated as errors.
 # TODO: Remove after upgrading to tray_manager >= 0.7.0 (requires Flutter >= 3.47),
 # which drops Ayatana.
-# https://github.com/localsend/localsend/pull/3358
+# https://github.com/yashhasan570/UniversalShare/pull/3358
 if(TARGET tray_manager_plugin)
   target_compile_options(tray_manager_plugin PRIVATE -Wno-error=deprecated-declarations)
 endif()

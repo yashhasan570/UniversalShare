@@ -89,7 +89,7 @@ jobs:
       - name: Test (signaling server)
         run: cargo test --package server
       - name: Check (plugin crate, CLI)
-        run: cargo check --package rust_lib_localsend_app --package localsend-cli
+        run: cargo check --package rust_lib_universal_share --package localsend-cli
 
   packaging:
     runs-on: ubuntu-latest
@@ -145,7 +145,7 @@ jobs:
 
       # Binaries must carry identical copyright strings (macOS conventionally uses
       # the © symbol, which is normalized for the comparison). License files use the
-      # Apache boilerplate format ("Copyright 2022-2026 Tien Do Nam") and typed_isolates
+      # Apache boilerplate format ("Copyright 2022-2026 yashhasan570") and typed_isolates
       # has its own start year, so only their end year is compared.
       # The vendored cargokit LICENSE is third-party and deliberately not checked.
       - name: Compare copyright strings
@@ -154,8 +154,8 @@ jobs:
           CLI_COPYRIGHT=$(grep -o 'Copyright (C) [^"]*' cli/build.rs)
           MACOS_COPYRIGHT=$(sed -n 's/^PRODUCT_COPYRIGHT = //p' app/macos/Runner/Configs/AppInfo.xcconfig | sed 's/©/(C)/')
           APP_YEAR=$(echo "$APP_COPYRIGHT" | grep -o '[0-9]\{4\}' | tail -1)
-          ROOT_LICENSE_YEAR=$(grep -o 'Copyright [0-9][0-9-]* Tien Do Nam' LICENSE | grep -o '[0-9]\{4\}' | tail -1)
-          TYPED_LICENSE_YEAR=$(grep -o 'Copyright [0-9][0-9-]* Tien Do Nam' packages/typed_isolates/LICENSE | grep -o '[0-9]\{4\}' | tail -1)
+          ROOT_LICENSE_YEAR=$(grep -o 'Copyright [0-9][0-9-]* yashhasan570' LICENSE | grep -o '[0-9]\{4\}' | tail -1)
+          TYPED_LICENSE_YEAR=$(grep -o 'Copyright [0-9][0-9-]* yashhasan570' packages/typed_isolates/LICENSE | grep -o '[0-9]\{4\}' | tail -1)
           echo "App copyright is:                   $APP_COPYRIGHT"
           echo "CLI copyright is:                   $CLI_COPYRIGHT"
           echo "macOS copyright is:                 $MACOS_COPYRIGHT"

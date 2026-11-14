@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:localsend_app/gen/strings.g.dart';
-import 'package:localsend_app/model/persistence/color_mode.dart';
-import 'package:localsend_app/provider/device_info_provider.dart';
-import 'package:localsend_app/util/native/platform_check.dart';
-import 'package:localsend_app/util/ui/dynamic_colors.dart';
+import 'package:universal_share/gen/strings.g.dart';
+import 'package:universal_share/model/persistence/color_mode.dart';
+import 'package:universal_share/provider/device_info_provider.dart';
+import 'package:universal_share/util/native/platform_check.dart';
+import 'package:universal_share/util/ui/dynamic_colors.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:yaru/yaru.dart' as yaru;
 
@@ -27,7 +27,7 @@ ThemeData getTheme(ColorMode colorMode, Color customColor, Brightness brightness
     borderRadius: _borderRadius,
   );
 
-  // https://github.com/localsend/localsend/issues/52
+  // https://github.com/yashhasan570/UniversalShare/issues/52
   final String? fontFamily;
   if (checkPlatform([TargetPlatform.windows])) {
     fontFamily = switch (LocaleSettings.currentLocale) {

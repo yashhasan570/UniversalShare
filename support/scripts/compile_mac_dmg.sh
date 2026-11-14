@@ -2,7 +2,7 @@
 # - brew install create-dmg
 
 VERSION=$(sed -n 's/^version: \([0-9]*\.[0-9]*\.[0-9]*\).*/\1/p' app/pubspec.yaml)
-DMG="LocalSend-$VERSION.dmg"
+DMG="Universal Share-$VERSION.dmg"
 
 cd app
 fvm flutter clean
@@ -13,8 +13,8 @@ fvm flutter build macos
 echo
 echo "Signing the app..."
 echo
-SIGN_ID="Developer ID Application: Tien Do Nam (3W7H4PYMCV)"
-codesign --deep --force --verbose --options runtime --preserve-metadata=entitlements --sign "$SIGN_ID" build/macos/Build/Products/Release/LocalSend.app
+SIGN_ID="Developer ID Application: yashhasan570 (3W7H4PYMCV)"
+codesign --deep --force --verbose --options runtime --preserve-metadata=entitlements --sign "$SIGN_ID" build/macos/Build/Products/Release/Universal Share.app
 
 # create dmg
 # brew install create-dmg
@@ -23,13 +23,13 @@ echo "Creating dmg..."
 echo
 rm -f "$DMG"
 create-dmg \
-  --volname "LocalSend" \
+  --volname "Universal Share" \
   --window-size 500 300 \
   --background "../support/build/dmg/background.png" \
-  --icon LocalSend.app 130 110 \
+  --icon Universal Share.app 130 110 \
   --app-drop-link 360 110 \
   "$DMG" \
-  build/macos/Build/Products/Release/LocalSend.app
+  build/macos/Build/Products/Release/Universal Share.app
 
 # sign the dmg
 echo

@@ -1,0 +1,50 @@
+name: Sync from upstream
+
+on:
+  schedule:
+    - cron: "0 3 * * *"
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Clone upstream
+        run: |
+          git clone --depth 1 https://github.com/localsend/localsend /tmp/upstream
+
+      - name: Sync rebranded source
+        run: |
+          rsync -a --delete \
+            --exclude '.git/' \
+            --exclude '.github/' \
+            --exclude 'scripts/' \
+            --exclude 'app/assets/img/' \
+            --exclude 'app/assets/packaging/' \
+            --exclude 'app/android/app/src/main/res/mipmap-*/' \
+            --exclude 'app/android/app/src/main/res/drawable/banner.png' \
+            --exclude 'app/ios/Runner/Assets.xcassets/AppIcon.appiconset/' \
+            --exclude 'app/macos/Runner/Assets.xcassets/' \
+            --exclude 'app/macos/ShareExtension/icon.icns' \
+            --exclude 'app/web/favicon.png' \
+            --exclude 'app/web/icons/' \
+            --exclude 'app/windows/runner/resources/app_icon.ico' \
+            /tmp/upstream/ ./
+
+      - name: Rebrand
+        run: |
+          python3 scripts/migrate.py
+          python3 scripts/icons/install_icons.py
+
+      - name: Commit and push
+        run: |
+          git config user.name yashhasan570
+          git config user.email hasankhalid700570@gmail.com
+          git add -A
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "Sync rebranded source from upstream (Universal Share)"
+          git push

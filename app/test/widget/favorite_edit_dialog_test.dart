@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:localsend_app/gen/strings.g.dart';
-import 'package:localsend_app/model/persistence/favorite_device.dart';
-import 'package:localsend_app/provider/persistence_provider.dart';
-import 'package:localsend_app/widget/dialogs/favorite_edit_dialog.dart';
+import 'package:universal_share/gen/strings.g.dart';
+import 'package:universal_share/model/persistence/favorite_device.dart';
+import 'package:universal_share/provider/persistence_provider.dart';
+import 'package:universal_share/widget/dialogs/favorite_edit_dialog.dart';
 import 'package:mockito/mockito.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 

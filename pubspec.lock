@@ -311,7 +311,7 @@ packages:
       path: "."
       ref: "5dc7956d938541254d2e175766b3b84ea38bb85b"
       resolved-ref: "5dc7956d938541254d2e175766b3b84ea38bb85b"
-      url: "https://github.com/Tienisto/device_apps.git"
+      url: "https://github.com/yashhasan570/device_apps.git"
     source: git
     version: "2.2.0"
   device_info_plus:
@@ -1384,7 +1384,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.8.1"
-  rust_lib_localsend_app:
+  rust_lib_universal_share:
     dependency: transitive
     description:
       path: "packages/localsend_isolates/rust_builder"

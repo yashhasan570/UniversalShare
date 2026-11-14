@@ -1,6 +1,6 @@
 {
-  "name": "localsend_app",
-  "short_name": "localsend_app",
+  "name": "Universal Share",
+  "short_name": "Universal Share",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#0175C2",

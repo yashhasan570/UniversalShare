@@ -1,6 +1,6 @@
-// Regression test for https://github.com/localsend/localsend/issues/3165
+// Regression test for https://github.com/yashhasan570/UniversalShare/issues/3165
 //
-// "Send to -> LocalSend" starts a second process with the file paths as
+// "Send to -> Universal Share" starts a second process with the file paths as
 // arguments. Only the internal `show` handover keeps that process from becoming
 // a duplicate instance that then collides on port 53317.
 //
@@ -34,10 +34,10 @@ const _token = 'show-token-3165';
 File _findDylib() {
   final base = '${Directory.current.path}/../../target/debug';
   return [
-    File('$base/librust_lib_localsend_app.dylib'),
-    File('$base/librust_lib_localsend_app.so'),
-    File('$base/rust_lib_localsend_app.dll'),
-  ].firstWhere((f) => f.existsSync(), orElse: () => File('$base/librust_lib_localsend_app.dylib'));
+    File('$base/librust_lib_universal_share.dylib'),
+    File('$base/librust_lib_universal_share.so'),
+    File('$base/rust_lib_universal_share.dll'),
+  ].firstWhere((f) => f.existsSync(), orElse: () => File('$base/librust_lib_universal_share.dylib'));
 }
 
 /// What the stub server saw of a handover request.
@@ -108,7 +108,7 @@ void main() {
 
   test('hands the arguments to the running instance over TLS', () async {
     if (!_findDylib().existsSync()) {
-      markTestSkipped('Rust dylib not built (cargo build -p rust_lib_localsend_app)');
+      markTestSkipped('Rust dylib not built (cargo build -p rust_lib_universal_share)');
       return;
     }
     final (server, received) = await startStub();
@@ -143,7 +143,7 @@ void main() {
 
   test('does not exit when the running instance rejects the request', () async {
     if (!_findDylib().existsSync()) {
-      markTestSkipped('Rust dylib not built (cargo build -p rust_lib_localsend_app)');
+      markTestSkipped('Rust dylib not built (cargo build -p rust_lib_universal_share)');
       return;
     }
     final (server, _) = await startStub();
@@ -164,7 +164,7 @@ void main() {
 
   test('reports no running instance when nothing listens', () async {
     if (!_findDylib().existsSync()) {
-      markTestSkipped('Rust dylib not built (cargo build -p rust_lib_localsend_app)');
+      markTestSkipped('Rust dylib not built (cargo build -p rust_lib_universal_share)');
       return;
     }
     // Bind and immediately release a port so that nothing answers on it.

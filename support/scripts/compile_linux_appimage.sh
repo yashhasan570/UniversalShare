@@ -36,7 +36,7 @@ if [ -z "$APP_VERSION" ]; then
 fi
 export APP_VERSION
 appimage-builder
-appimage_file="LocalSend-${APP_VERSION}-linux-x86-64.AppImage"
+appimage_file="Universal Share-${APP_VERSION}-linux-x86-64.AppImage"
 sudo chmod +x "$appimage_file"
 
 rm -rf AppDir

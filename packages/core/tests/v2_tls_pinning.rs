@@ -20,7 +20,7 @@ use tokio::sync::{mpsc, oneshot, Mutex};
 use tokio_stream::wrappers::ReceiverStream;
 use tokio_util::sync::CancellationToken;
 
-/// A generated self-signed certificate, as LocalSend peers use them.
+/// A generated self-signed certificate, as Universal Share peers use them.
 struct Identity {
     cert: String,
     private_key: String,
@@ -394,7 +394,7 @@ async fn test_client_without_cert_allowed_in_web_mode() {
     assert_eq!(response.status().as_u16(), 200);
     assert!(response.text().await.unwrap().contains("prepare-upload"));
 
-    // A LocalSend peer still authenticates with its certificate.
+    // A Universal Share peer still authenticates with its certificate.
     let client = client(&sender, Some(&server_identity.fingerprint));
     let response = client
         .register(
