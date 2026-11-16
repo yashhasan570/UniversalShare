@@ -1,6 +1,6 @@
 {
-  "name": "Universal Share",
-  "short_name": "Universal Share",
+  "name": "universal_share",
+  "short_name": "universal_share",
   "start_url": ".",
   "display": "standalone",
   "background_color": "#0175C2",
