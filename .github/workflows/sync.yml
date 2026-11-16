@@ -39,6 +39,7 @@ jobs:
 
       - name: Rebrand
         run: |
+          pip3 install --quiet pillow
           python3 scripts/migrate.py
           python3 scripts/icons/install_icons.py
 
