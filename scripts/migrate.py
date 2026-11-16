@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Re-apply the Universal Share rebrand after each upstream sync."""
-import re, shutil, sys
+import os, re, shutil, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
