@@ -23,6 +23,7 @@
 Universal Share is a free, open-source app that allows you to securely share files and messages with nearby devices over your local network without needing an internet connection.
 
 - [About](#about)
+- [Sponsors](#sponsors)
 - [Screenshots](#screenshots)
 - [Download](#download)
 - [How It Works](#how-it-works)
@@ -43,6 +44,16 @@ Universal Share is a free, open-source app that allows you to securely share fil
 ## About
 
 Universal Share is a cross-platform app that enables secure communication between devices using a REST API and HTTPS encryption. Unlike other messaging apps that rely on external servers, Universal Share doesn't require an internet connection or third-party servers, making it a fast and reliable solution for local communication.
+
+## Sponsors
+
+This project is tested with BrowserStack
+
+Supported by TestMu AI
+
+<a href="https://www.testmuai.com/?utm_medium=sponsor&utm_source=localsend" target="_blank">
+    <img src="https://github.com/yashhasan570/UniversalShare/img/sponsors/tesmu.svg" style="vertical-align: middle;" width="250" height="45" />
+</a>
 
 ## Screenshots
 
@@ -93,8 +104,8 @@ Windows binaries are signed. Read more about the [Code signing policy][].
 | Platform | Minimum Version | Note                                                                                                                        |
 |----------|-----------------|-----------------------------------------------------------------------------------------------------------------------------|
 | Android  | 7.0             | The last version to support Android 5 and 6 is v1.17.0.                                                                     |
-| iOS      | 15.0            | The last version to support iOS 13 and 14 is v1.18.2 (sharing from other apps requires iOS 14), and iOS 12 is v1.17.0.       |
-| macOS    | 12 Monterey     | The last version to support macOS 11 is v1.18.2. Use OpenCore Legacy Patcher 2.0.2 (See [#1005](https://github.com/yashhasan570/UniversalShare/issues/1005#issuecomment-2449899384)) |
+| iOS      | 13.0            | The last version to support iOS 12 is v1.17.0. Sharing from other apps requires iOS 14 or later.                               |
+| macOS    | 11 Big Sur      | Use OpenCore Legacy Patcher 2.0.2 (See [#1005](https://github.com/yashhasan570/UniversalShare/issues/1005#issuecomment-2449899384)) |
 | Windows  | 10              | The last version to support Windows 7 is v1.15.4.   |
 | Linux    | N.A.            | Deps: Gnome: `xdg-desktop-portal` and `xdg-desktop-portal-gtk`, KDE: `xdg-desktop-portal` and `xdg-desktop-portal-kde`      |
 
@@ -320,7 +331,3 @@ Instructions in [localsend/snap/README.md](https://github.com/localsend/snap/blo
 <a href="https://github.com/yashhasan570/UniversalShare/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=localsend/localsend"  alt="Localsend Contributors"/>
 </a>
-
-## Contact
-
-Questions, problem reports or feedback? Reach us on Telegram: [@johnconstantine570](https://t.me/johnconstantine570)
