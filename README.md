@@ -23,7 +23,6 @@
 Universal Share is a free, open-source app that allows you to securely share files and messages with nearby devices over your local network without needing an internet connection.
 
 - [About](#about)
-- [Sponsors](#sponsors)
 - [Screenshots](#screenshots)
 - [Download](#download)
 - [How It Works](#how-it-works)
