@@ -45,16 +45,6 @@ Universal Share is a free, open-source app that allows you to securely share fil
 
 Universal Share is a cross-platform app that enables secure communication between devices using a REST API and HTTPS encryption. Unlike other messaging apps that rely on external servers, Universal Share doesn't require an internet connection or third-party servers, making it a fast and reliable solution for local communication.
 
-## Sponsors
-
-This project is tested with BrowserStack
-
-Supported by TestMu AI
-
-<a href="https://www.testmuai.com/?utm_medium=sponsor&utm_source=localsend" target="_blank">
-    <img src="https://github.com/yashhasan570/UniversalShare/img/sponsors/tesmu.svg" style="vertical-align: middle;" width="250" height="45" />
-</a>
-
 ## Screenshots
 
 <img src="https://github.com/yashhasan570/UniversalShare/img/screenshot-iphone.webp" alt="iPhone screenshot" height="300"/> <img src="https://github.com/yashhasan570/UniversalShare/img/screenshot-pc.webp" alt="PC screenshot" height="300"/>
@@ -331,3 +321,7 @@ Instructions in [localsend/snap/README.md](https://github.com/localsend/snap/blo
 <a href="https://github.com/yashhasan570/UniversalShare/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=localsend/localsend"  alt="Localsend Contributors"/>
 </a>
+
+## Contact
+
+Questions, problem reports or feedback? Reach us on Telegram: [@johnconstantine570](https://t.me/johnconstantine570)
