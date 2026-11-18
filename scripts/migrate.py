@@ -37,11 +37,26 @@ REPL = [
 
 EXTS = {'.dart','.json','.md','.yaml','.yml','.xml','.plist','.xcconfig','.rc',
         '.toml','.rs','.sh','.properties','.gradle','.kts','.txt','.html','.js',
-        '.ts','.mod','.lock','.cmake'}
+        '.ts','.mod','.lock','.cmake','.kt','.java'}
 SKIP_DIRS = {'.git','build','.dart_tool','node_modules'}
 PROTECT = ('sync.yml',)  # keep the upstream clone URL intact
 
+def migrate_kotlin_tree():
+    """Upstream keeps the Kotlin sources under org.localsend.localsend_app;
+    after each sync, move them into the rebranded package directory."""
+    old_dir = ROOT/'app/android/app/src/main/kotlin/org/localsend/localsend_app'
+    new_dir = ROOT/'app/android/app/src/main/kotlin/com/universalshare/app'
+    if not old_dir.exists():
+        return
+    new_dir.mkdir(parents=True, exist_ok=True)
+    for f in old_dir.iterdir():
+        if f.is_file():
+            shutil.move(str(f), str(new_dir/f.name))
+    shutil.rmtree(old_dir.parent, ignore_errors=True)
+    shutil.rmtree(old_dir.parent.parent, ignore_errors=True)
+
 def main():
+    migrate_kotlin_tree()
     # sync.yml replaces upstream's workflows wholesale; re-delete the dropped ones
     wf = ROOT/'.github'/'workflows'
     for p in wf.glob('*.yml'):
