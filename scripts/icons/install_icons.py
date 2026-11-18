@@ -26,6 +26,36 @@ def repl(path, mode='square'):
     else:
         badge.resize(sz, Image.LANCZOS).save(p)
 
+# Create missing Android icon slots (blank, correct sizes) so the manifest
+# always has the resources it references, even after a fresh setup.
+_DENS = {'mdpi': 48, 'hdpi': 72, 'xhdpi': 96, 'xxhdpi': 144, 'xxxhdpi': 192}
+_FG = {'mdpi': 108, 'hdpi': 162, 'xhdpi': 216, 'xxhdpi': 324, 'xxxhdpi': 432}
+_QT = {'mdpi': 24, 'hdpi': 36, 'xhdpi': 48, 'xxhdpi': 72, 'xxxhdpi': 96}
+for _d, _sz in _DENS.items():
+    _base = ROOT / f'app/android/app/src/main/res/mipmap-{_d}'
+    for _name, _s in [('ic_launcher.png', _sz), ('ic_launcher_round.png', _sz),
+                      ('ic_launcher_foreground.png', _FG[_d]),
+                      ('ic_launcher_monochrome.png', _FG[_d]),
+                      ('ic_launcher_quicktile_foreground.png', _QT[_d])]:
+        _p = _base / _name
+        if not _p.exists():
+            _base.mkdir(parents=True, exist_ok=True)
+            Image.new('RGBA', (_s, _s), (0, 0, 0, 0)).save(_p)
+_banner = ROOT / 'app/android/app/src/main/res/drawable/banner.png'
+if not _banner.exists():
+    _banner.parent.mkdir(parents=True, exist_ok=True)
+    Image.new('RGBA', (320, 180), (0, 0, 0, 0)).save(_banner)
+_adaptive = ROOT / 'app/android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml'
+if not _adaptive.exists():
+    _adaptive.parent.mkdir(parents=True, exist_ok=True)
+    _adaptive.write_text(
+        '<?xml version="1.0" encoding="utf-8"?>\n'
+        '<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">\n'
+        '    <background android:drawable="@color/ic_launcher_background"/>\n'
+        '    <foreground android:drawable="@mipmap/ic_launcher_foreground"/>\n'
+        '    <monochrome android:drawable="@mipmap/ic_launcher_monochrome"/>\n'
+        '</adaptive-icon>\n')
+
 for n in ['logo-32.png','logo-32-black.png','logo-32-white.png','logo-128.png',
           'logo-256.png','logo-512.png','logo-512-white.png']:
     repl(f'app/assets/img/{n}')
