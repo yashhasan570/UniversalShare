@@ -18,9 +18,6 @@ import 'package:universal_share/provider/network/nearby_devices_provider.dart';
 import 'package:universal_share/provider/network/server/server_provider.dart';
 import 'package:universal_share/provider/network/webrtc/signaling_provider.dart';
 import 'package:universal_share/provider/persistence_provider.dart';
-// [FOSS_REMOVE_START]
-import 'package:universal_share/provider/purchase_provider.dart';
-// [FOSS_REMOVE_END]
 import 'package:universal_share/provider/selection/selected_sending_files_provider.dart';
 import 'package:universal_share/provider/settings_provider.dart';
 import 'package:universal_share/provider/tv_provider.dart';
@@ -321,12 +318,6 @@ Future<void> postInit(BuildContext context, Ref ref, bool appStart) async {
     await ref.read(persistenceProvider).setWhatsNew(version.version);
   });
 
-  // [FOSS_REMOVE_START]
-  if (checkPlatformSupportPayment()) {
-    // ignore: unawaited_futures
-    ref.redux(purchaseProvider).dispatchAsync(InitPurchaseStream());
-  }
-  // [FOSS_REMOVE_END]
 }
 
 class _HandleShareIntentAction extends AsyncGlobalAction {
