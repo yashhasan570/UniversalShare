@@ -110,7 +110,7 @@ class AppDelegate: FlutterAppDelegate {
     }
     
     @objc func showLocalSendFromMenuBar() {
-        channel?.invokeMethod("showUniversalShareFromMenuBar", arguments: nil)
+        channel?.invokeMethod("showLocalSendFromMenuBar", arguments: nil)
     }
     
     @objc private func quitApp() {

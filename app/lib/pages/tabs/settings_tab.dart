@@ -5,6 +5,7 @@ import 'package:universal_share/gen/strings.g.dart';
 import 'package:universal_share/model/persistence/color_mode.dart';
 import 'package:universal_share/pages/about/about_page.dart';
 import 'package:universal_share/pages/changelog_page.dart';
+import 'package:universal_share/pages/donation/donation_page.dart';
 import 'package:universal_share/pages/settings/network_interfaces_page.dart';
 import 'package:universal_share/pages/tabs/settings_tab_controller.dart';
 import 'package:universal_share/provider/network/server/server_provider.dart';
@@ -535,6 +536,13 @@ class SettingsTab extends StatelessWidget {
                   buttonLabel: t.general.open,
                   onTap: () async {
                     await context.push(() => const AboutPage());
+                  },
+                ),
+                _ButtonEntry(
+                  label: t.settingsTab.other.support,
+                  buttonLabel: t.settingsTab.other.donate,
+                  onTap: () async {
+                    await context.push(() => const DonationPage());
                   },
                 ),
                 _ButtonEntry(

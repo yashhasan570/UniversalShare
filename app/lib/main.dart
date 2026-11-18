@@ -39,15 +39,15 @@ Future<void> main(List<String> args) async {
       container: container,
       child: SDTFScope(
         child: TranslationProvider(
-          child: const UniversalShareApp(),
+          child: const Universal ShareApp(),
         ),
       ),
     ),
   );
 }
 
-class UniversalShareApp extends StatelessWidget {
-  const UniversalShareApp();
+class Universal ShareApp extends StatelessWidget {
+  const Universal ShareApp();
 
   @override
   Widget build(BuildContext context) {

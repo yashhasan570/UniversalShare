@@ -18,6 +18,9 @@ import 'package:universal_share/provider/network/nearby_devices_provider.dart';
 import 'package:universal_share/provider/network/server/server_provider.dart';
 import 'package:universal_share/provider/network/webrtc/signaling_provider.dart';
 import 'package:universal_share/provider/persistence_provider.dart';
+// [FOSS_REMOVE_START]
+import 'package:universal_share/provider/purchase_provider.dart';
+// [FOSS_REMOVE_END]
 import 'package:universal_share/provider/selection/selected_sending_files_provider.dart';
 import 'package:universal_share/provider/settings_provider.dart';
 import 'package:universal_share/provider/tv_provider.dart';
@@ -46,6 +49,7 @@ import 'package:localsend_isolates/util/rust_init.dart';
 import 'package:localsend_isolates/util/show_instance.dart';
 import 'package:localsend_isolates/util/transfer_notification.dart';
 import 'package:logging/logging.dart';
+import 'package:marionette_flutter/marionette_flutter.dart';
 import 'package:refena_flutter/addons.dart';
 import 'package:refena_flutter/refena_flutter.dart';
 import 'package:routerino/routerino.dart';
@@ -56,7 +60,12 @@ final _logger = Logger('Init');
 
 /// Will be called before the MaterialApp started
 Future<RefenaContainer> preInit(List<String> args) async {
-  WidgetsFlutterBinding.ensureInitialized();
+  if (kDebugMode) {
+    // Lets the Marionette MCP server drive the app (tap, scroll, screenshot).
+    MarionetteBinding.ensureInitialized();
+  } else {
+    WidgetsFlutterBinding.ensureInitialized();
+  }
 
   initLogger(args.contains('-v') || args.contains('--verbose') ? Level.ALL : Level.INFO);
 
@@ -318,6 +327,12 @@ Future<void> postInit(BuildContext context, Ref ref, bool appStart) async {
     await ref.read(persistenceProvider).setWhatsNew(version.version);
   });
 
+  // [FOSS_REMOVE_START]
+  if (checkPlatformSupportPayment()) {
+    // ignore: unawaited_futures
+    ref.redux(purchaseProvider).dispatchAsync(InitPurchaseStream());
+  }
+  // [FOSS_REMOVE_END]
 }
 
 class _HandleShareIntentAction extends AsyncGlobalAction {
