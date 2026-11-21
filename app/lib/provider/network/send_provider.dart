@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:universal_share/model/cross_file.dart';
 import 'package:universal_share/model/send_mode.dart';
@@ -14,6 +13,7 @@ import 'package:universal_share/provider/file_transfer_provider.dart';
 import 'package:universal_share/provider/http_provider.dart';
 import 'package:universal_share/provider/selection/selected_sending_files_provider.dart';
 import 'package:universal_share/provider/settings_provider.dart';
+import 'package:universal_share/util/message_preview.dart';
 import 'package:universal_share/widget/dialogs/pin_dialog.dart';
 import 'package:localsend_isolates/isolate.dart';
 import 'package:localsend_isolates/model/device.dart';
@@ -118,9 +118,7 @@ class SendNotifier extends Notifier<Map<String, SendSessionState>> {
                 fileType: file.fileType,
                 hash: null,
                 // calculated below
-                preview: files.length == 1 && files.first.fileType == FileType.text && files.first.bytes != null
-                    ? utf8.decode(files.first.bytes!) // send simple message by embedding it into the preview
-                    : null,
+                preview: files.length == 1 && file.fileType == FileType.text ? createMessagePreview(file.bytes) : null,
                 metadata: file.lastModified != null || file.lastAccessed != null
                     ? FileMetadata(
                         lastModified: file.lastModified,

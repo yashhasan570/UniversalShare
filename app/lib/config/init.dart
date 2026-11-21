@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 
 import 'package:dart_mappable/dart_mappable.dart';
 import 'package:flutter/foundation.dart';
@@ -33,6 +32,7 @@ import 'package:universal_share/util/native/channel/android_channel.dart';
 import 'package:universal_share/util/native/context_menu_helper.dart';
 import 'package:universal_share/util/native/cross_file_converters.dart';
 import 'package:universal_share/util/native/device_info_helper.dart';
+import 'package:universal_share/util/native/exit_helper.dart';
 import 'package:universal_share/util/native/macos_channel.dart';
 import 'package:universal_share/util/native/platform_check.dart';
 import 'package:universal_share/util/native/tray_helper.dart';
@@ -116,7 +116,7 @@ Future<RefenaContainer> preInit(List<String> args) async {
       args: args,
     );
     if (handedOver) {
-      exit(0); // Another instance does exist
+      await exitApp(); // Another instance does exist
     }
 
     // initialize tray AFTER i18n has been initialized

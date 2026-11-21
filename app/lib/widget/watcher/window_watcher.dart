@@ -1,9 +1,9 @@
 import 'dart:async';
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:universal_share/provider/animation_provider.dart';
 import 'package:universal_share/provider/settings_provider.dart';
 import 'package:universal_share/provider/window_dimensions_provider.dart';
+import 'package:universal_share/util/native/exit_helper.dart';
 import 'package:universal_share/util/native/platform_check.dart';
 import 'package:universal_share/util/native/tray_helper.dart';
 import 'package:logging/logging.dart';
@@ -102,7 +102,7 @@ class _WindowWatcherState extends State<WindowWatcher> with WindowListener, Refe
         await hideToTray();
       } else {
         await destroyTray();
-        exit(0);
+        await exitApp();
       }
     } catch (e) {
       _logger.warning('Failed to close window', e);

@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:universal_share/model/cross_file.dart';
@@ -7,6 +6,7 @@ import 'package:universal_share/model/state/send/web/web_download_session.dart';
 import 'package:universal_share/model/state/send/web/web_download_state.dart';
 import 'package:universal_share/provider/network/server/server_utils.dart';
 import 'package:universal_share/provider/settings_provider.dart';
+import 'package:universal_share/util/message_preview.dart';
 import 'package:universal_share/util/native/directories.dart';
 import 'package:universal_share/util/user_agent_analyzer.dart';
 import 'package:localsend_isolates/isolate.dart';
@@ -60,9 +60,7 @@ class SendController {
                   size: file.size,
                   fileType: file.fileType,
                   hash: null,
-                  preview: files.first.fileType == FileType.text && files.first.bytes != null
-                      ? utf8.decode(files.first.bytes!) // send simple message by embedding it into the preview
-                      : null,
+                  preview: files.length == 1 && file.fileType == FileType.text ? createMessagePreview(file.bytes) : null,
                   metadata: file.lastModified != null || file.lastAccessed != null
                       ? FileMetadata(
                           lastModified: file.lastModified,
